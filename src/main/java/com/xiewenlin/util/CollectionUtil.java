@@ -44,7 +44,7 @@ public class CollectionUtil {
      * @param coll 集合入参对象
      * @return
      */
-    public static boolean checkCollectionIsEmpty(final Collection<?> coll) {
+    public static boolean checkCollectionIsEmpty(final Collection<? extends Object> coll) {
         return coll == null || coll.isEmpty();
     }
 

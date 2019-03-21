@@ -62,6 +62,14 @@
             <artifactId>commons-dbcp2</artifactId>
             <version>2.0.1</version>
         </dependency>
+        <!--新增tools.jar工具插件依赖-->
+        <dependency>
+            <groupId>sun.jdk</groupId>
+            <artifactId>tools</artifactId>
+            <version>1.8.0</version>
+            <scope>system</scope>
+            <systemPath>${java.home}/../lib/tools.jar</systemPath>
+        </dependency>
     </dependencies>
 
     <build>
@@ -94,6 +102,21 @@
             <version>2.2</version>
             <configuration>
                 <path>/${project.artifactId}</path>
+            </configuration>
+        </plugin>
+        <!--新增rt.jar工具插件依赖-->
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.7.0</version>
+            <configuration>
+                <source>1.8</source>
+                <target>1.8</target>
+                <encoding>UTF-8</encoding>
+                <compilerArguments>
+                    <verbose />
+                    <bootclasspath>${java.home}/jre/lib/rt.jar${path.separator}${java.home}/jre/lib/rt.jar</bootclasspath>
+                </compilerArguments>
             </configuration>
         </plugin>
     </plugins>

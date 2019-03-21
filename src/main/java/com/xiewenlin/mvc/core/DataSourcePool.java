@@ -1,4 +1,4 @@
-package com.xiewenlin.core;
+package com.xiewenlin.mvc.core;
 
 import com.xiewenlin.util.CollectionUtil;
 import com.xiewenlin.util.PropertyUtil;
