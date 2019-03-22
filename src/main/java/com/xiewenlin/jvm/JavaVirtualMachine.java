@@ -20,7 +20,7 @@ public class JavaVirtualMachine {
 
     /**
      * 初始类
-     * 包含 main 方法的类
+     * 包含 main 方法的类名
      */
     private String initialClass;
     /**

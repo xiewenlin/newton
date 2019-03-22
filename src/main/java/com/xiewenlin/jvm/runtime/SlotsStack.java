@@ -6,7 +6,8 @@ import java.util.NoSuchElementException;
 /**
  * @author xiewenlin@frtauto.com
  * @ClassName SlotsStack
- * @Description 可指定槽位大小的栈
+ * @Description 可指定槽位大小的栈，是用于存储操作数的栈，操作数栈用来准备字节码调用时的参数
+ *              并接收其返回结果，操作数栈的长度由编译期决定。
  * @Date 2019/3/22 9:24
  * @Version V1.0.0
  */

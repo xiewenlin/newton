@@ -27,16 +27,16 @@ public class StackFrame {
     private SlotsStack<Object> operandStack;
 
     /**
-     * 字节码
+     * 字节码内容：以数组形式保存的当期方法的字节码。
      */
     private UserInvoker[] byteCodes;
 
     /**
-     * 程序计数器
+     * 程序计数器：记录当前正在执行的字节码的位置。
      */
     private int pc=0;
     /**
-     * 常量池（Constant Pool）
+     * 常量池（Constant Pool）：引用当前类的常量池。
      */
     private ConstantPool constantPool;
     private Object returnVal;

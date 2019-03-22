@@ -8,7 +8,7 @@ import com.xiewenlin.jvm.user.UserInvoker;
 /**
  * @author xiewenlin@frtauto.com
  * @ClassName JavaVirtualMachineStack
- * @Description 虚拟机栈,每个虚拟机线程持有一个独立的栈
+ * @Description 虚拟机栈,每个虚拟机线程持有一个独立的操作数栈
  * @Date 2019/3/20 18:21
  * @Version V1.0.0
  */
