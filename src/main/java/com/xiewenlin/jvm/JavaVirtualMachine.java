@@ -1,9 +1,10 @@
 package com.xiewenlin.jvm;
 
-import com.xiewenlin.jvm.core.RunEnvironment;
-import com.xiewenlin.jvm.lang.ClassLoaderX;
-import com.xiewenlin.jvm.lang.ClassX;
-import com.xiewenlin.jvm.lang.MethodX;
+import com.xiewenlin.jvm.runtime.RunEnvironment;
+import com.xiewenlin.jvm.langx.ClassLoaderX;
+import com.xiewenlin.jvm.langx.ClassX;
+import com.xiewenlin.jvm.langx.MethodX;
+
 
 import java.nio.file.Path;
 import java.util.Hashtable;
@@ -33,7 +34,7 @@ public class JavaVirtualMachine {
     private Hashtable<String, ClassX> methodArea = new Hashtable<String, ClassX>();
 
     public JavaVirtualMachine(Path classPath, String initialClass){
-        classLoader = new DefaultClassLoaderX(classPath);
+        classLoader =new DefaultClassLoaderX(classPath);
         this.initialClass = initialClass;
     }
     /**
@@ -47,7 +48,7 @@ public class JavaVirtualMachine {
         //找到入口方法
         MethodX method = clazz.getMethod(
                 "main",
-                "([Ljava/lang/String;)V");
+                "([Ljava/langx/String;)V");
         //执行入口方法
         method.call(env, null, new Object[]{args});
     }

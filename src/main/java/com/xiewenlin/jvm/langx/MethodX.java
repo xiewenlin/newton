@@ -1,6 +1,6 @@
-package com.xiewenlin.jvm.lang;
+package com.xiewenlin.jvm.langx;
 
-import com.xiewenlin.jvm.core.RunEnvironment;
+import com.xiewenlin.jvm.runtime.RunEnvironment;
 
 /**
  * @author xiewenlin@frtauto.com

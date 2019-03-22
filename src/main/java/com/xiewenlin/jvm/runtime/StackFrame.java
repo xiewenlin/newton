@@ -1,12 +1,16 @@
-package com.xiewenlin.jvm.core;
+package com.xiewenlin.jvm.runtime;
 
-import com.sun.org.apache.bcel.internal.classfile.ConstantPool;
-
+import com.sun.tools.classfile.ConstantPool;
+import com.xiewenlin.jvm.langx.ClassX;
+import com.xiewenlin.jvm.langx.MethodX;
+import com.xiewenlin.jvm.user.UserInvoker;
 
 /**
- * 栈帧
- *
- * 对应 JVM 规范中的栈帧的概念，用于表示一次方法调用的上下文
+ * @author xiewenlin@frtauto.com
+ * @ClassName NativeClassX
+ * @Description 栈帧:对应 JVM 规范中的栈帧的概念，用于表示一次方法调用的上下文
+ * @Date 2019/3/21 16:06
+ * @Version V1.0.0
  */
 public class StackFrame {
 
@@ -14,7 +18,7 @@ public class StackFrame {
      * 局部变量表(Local Variables）
      * 用于存储方法的局部变量
      */
-    private Slots<Object> localVariables;
+    private SlotsArray<Object> localVariables;
 
     /**
      * 操作数栈(Operand Stack）
@@ -25,7 +29,7 @@ public class StackFrame {
     /**
      * 字节码
      */
-    private OpcodeInvoker[] opcodes;
+    private UserInvoker[] byteCodes;
 
     /**
      * 程序计数器
@@ -42,18 +46,18 @@ public class StackFrame {
     private final MethodX method;
 
     StackFrame(ClassX clazz, MethodX method, ConstantPool constantPool,
-               OpcodeInvoker[] opcodes,
+               UserInvoker[] byteCodes,
                int variables,
                int stackSize) {
         this.constantPool = constantPool;
-        this.opcodes = opcodes;
+        this.byteCodes = byteCodes;
         this.operandStack = new SlotsStack<>(stackSize);
-        this.localVariables = new Slots<>(variables);
+        this.localVariables = new SlotsArray<>(variables);
         this.clazz = clazz;
         this.method = method;
     }
 
-    public Slots<Object> getLocalVariables() {
+    public SlotsArray<Object> getLocalVariables() {
         return localVariables;
     }
 
@@ -92,8 +96,8 @@ public class StackFrame {
     public int increasePC(){
         return pc++;
     }
-    public OpcodeInvoker[] getOpcodes() {
-        return opcodes;
+    public UserInvoker[] getOpcodes() {
+        return byteCodes;
     }
 
     public ClassX getCurrentClass() {

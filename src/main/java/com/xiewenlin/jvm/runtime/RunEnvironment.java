@@ -1,4 +1,4 @@
-package com.xiewenlin.jvm.core;
+package com.xiewenlin.jvm.runtime;
 
 import com.xiewenlin.jvm.JavaVirtualMachine;
 
@@ -13,7 +13,7 @@ public class RunEnvironment {
     /**
      * 虚拟机栈
      */
-    private StackX stack = new StackX();
+    private JavaVirtualMachineStack stack = new JavaVirtualMachineStack();
     /**
      * 当前虚拟机
      */
@@ -23,7 +23,7 @@ public class RunEnvironment {
         this.vm = vm;
     }
 
-    public StackX getStack() {
+    public JavaVirtualMachineStack getStack() {
         return stack;
     }
 

@@ -1,4 +1,4 @@
-package com.xiewenlin.jvm.lang;
+package com.xiewenlin.jvm.langx;
 
 /**
  * @author xiewenlin@frtauto.com
@@ -8,5 +8,11 @@ package com.xiewenlin.jvm.lang;
  * @Version V1.0.0
  */
 public interface ClassLoaderX {
+    /**
+     * 定义类加载器方法
+     * @param className
+     * @return
+     * @throws ClassNotFoundException
+     */
     ClassX loadClass(String className) throws ClassNotFoundException;
 }

@@ -1,4 +1,4 @@
-package com.xiewenlin.jvm.lang;
+package com.xiewenlin.jvm.langx;
 
 /**
  * @author xiewenlin@frtauto.com
