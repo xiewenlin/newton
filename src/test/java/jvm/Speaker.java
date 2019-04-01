@@ -1,7 +1,7 @@
-package com.xiewenlin.test.jvm;
+package jvm;
 
 class Speaker implements SpeakerInterface {
-    private String hello = "";
+    private String hello;
 
     Speaker(String hello){
         this.hello = hello;

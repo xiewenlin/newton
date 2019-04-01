@@ -1,10 +1,8 @@
-package com.xiewenlin.test.jvm;
+package jvm;
 
 import com.xiewenlin.jvm.JavaVirtualMachine;
 
-import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Arrays;
 
 /**
  * @author xiewenlin@frtauto.com
@@ -18,7 +16,7 @@ public class JavaVirtualMachineTest {
         args=new String[2];
         args[0]="test";
         try {
-            JavaVirtualMachine jvm = new JavaVirtualMachine(Paths.get("C:/WorkSpace/idea/gitversion/newton/target/classes/com/xiewenlin/test/jvm/"), "HelloJavaVirtualMachine");
+            JavaVirtualMachine jvm = new JavaVirtualMachine(Paths.get("C:/WorkSpace/idea/gitversion/newton/target/classes/com/xiewenlin/test/jvm/"), "HelloWorld");
             jvm.run(args);
         } catch (Exception e) {
             e.printStackTrace();
