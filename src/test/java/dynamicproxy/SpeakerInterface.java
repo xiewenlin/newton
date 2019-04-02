@@ -1,4 +1,4 @@
-package jvm;
+package dynamicproxy;
 
 public interface SpeakerInterface {
     /**

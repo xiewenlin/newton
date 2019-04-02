@@ -1,4 +1,4 @@
-package jvm;
+package dynamicproxy;
 
 class Speaker implements SpeakerInterface {
     private String hello;

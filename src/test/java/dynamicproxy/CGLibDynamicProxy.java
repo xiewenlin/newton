@@ -1,5 +1,6 @@
-package jvm;
+package dynamicproxy;
 
+import jvm.StringImprove;
 import net.sf.cglib.proxy.Enhancer;
 import net.sf.cglib.proxy.MethodInterceptor;
 import net.sf.cglib.proxy.MethodProxy;
